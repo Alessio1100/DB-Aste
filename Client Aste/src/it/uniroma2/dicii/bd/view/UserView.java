@@ -24,12 +24,14 @@ public class UserView {
         System.out.println("3) Display items from won auctions ");
         System.out.println("4) View the currently open auctions");
         System.out.println("5) Quit");
+        System.out.println("");
 
 
         Scanner input = new Scanner(System.in);
         int choice = 0;
         while (true) {
             System.out.print("Please enter your choice: ");
+            System.out.println("");
             choice = input.nextInt();
             if (choice >= 1 && choice <= 5) {
                 break;

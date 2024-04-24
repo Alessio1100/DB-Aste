@@ -27,12 +27,14 @@ public class AdminView {
         System.out.println("7) Display all auctions");
         System.out.println("8) Display all Categories");
         System.out.println("9) Quit");
+        System.out.println("");
 
 
         Scanner input = new Scanner(System.in);
         int choice = 0;
         while (true) {
             System.out.print("Please enter your choice: ");
+            System.out.println("");
             choice = input.nextInt();
             if (choice >= 1 && choice <= 9) {
                 break;

@@ -23,7 +23,7 @@ public class UserDashboardDAO {
 
         try{
             Connection conn = ConnectionFactory.getConnection();
-            CallableStatement cs = conn.prepareCall("{call get_user_procedure(?,?,?,?,?,?,?,?,?,?)}");
+            CallableStatement cs = conn.prepareCall("{call get_user_procedure(?)}");
             cs.setString(1,username);
             if(cs.execute()) {
                 ResultSet rs = cs.getResultSet();

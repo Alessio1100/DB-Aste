@@ -16,12 +16,14 @@ public class ApplicationView {
         System.out.println("1) Register");
         System.out.println("2) Login");
         System.out.println("3) Quit");
+        System.out.println("");
 
 
         Scanner input = new Scanner(System.in);
         int choice = 0;
         while (true) {
             System.out.print("Please enter your choice: ");
+            System.out.println("");
             choice = input.nextInt();
             if (choice >= 1 && choice <= 3) {
                 break;
