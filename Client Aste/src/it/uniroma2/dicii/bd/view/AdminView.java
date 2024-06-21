@@ -163,7 +163,7 @@ public class AdminView {
         item.setStato(reader.readLine());
         System.out.println("Enter the basic auction price: ");
         item.setBaseAsta(input.nextFloat());
-        System.out.println("Enter a description of the size of the object to be auctioned: ");
+        System.out.println("Enter a description of the size of the object to be auctioned [DxDxD]: ");
         item.setDimensioni(reader.readLine());
         System.out.println("Enter the duration of the auction: (the duration indicates the days that the auction should last, max 7 days)");
         item.setDurataAsta(input.nextInt());

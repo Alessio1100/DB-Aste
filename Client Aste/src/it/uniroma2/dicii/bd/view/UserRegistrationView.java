@@ -104,9 +104,9 @@ public class UserRegistrationView {
         // scadenza carta
         String scadenzaCarta = null;
         try {
-            SimpleDateFormat formato = new SimpleDateFormat("MM/yy");
+            SimpleDateFormat formato = new SimpleDateFormat("MM-yy");
             formato.setLenient(false);
-            System.out.println("Please enter the card expire date [MM/YY]: ");
+            System.out.println("Please enter the card expire date [MM-YY]: ");
             scadenzaCarta = reader.readLine();
             formato.parse(scadenzaCarta);
         }

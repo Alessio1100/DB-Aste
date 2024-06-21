@@ -25,7 +25,7 @@ public class InsertItemProcedureDAO implements GenericProcedureDAO<Boolean>{
 
         try {
             Connection conn = ConnectionFactory.getConnection();
-            CallableStatement cs = conn.prepareCall("{call insert_item_procedure(?)}");
+            CallableStatement cs = conn.prepareCall("{call insert_item_procedure(?,?,?,?,?,?)}");
             cs.setString(1,item.getDescrizione());
             cs.setString(2,item.getStato());
             cs.setFloat(3,item.getBaseAsta());

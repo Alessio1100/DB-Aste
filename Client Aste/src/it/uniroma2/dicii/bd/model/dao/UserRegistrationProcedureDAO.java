@@ -27,7 +27,7 @@ public class UserRegistrationProcedureDAO implements GenericProcedureDAO<Boolean
 
         try {
             Connection conn = ConnectionFactory.getConnection();
-            CallableStatement cs = conn.prepareCall("{call user_registration_procedure(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+            CallableStatement cs = conn.prepareCall("{call user_registration_procedure(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
             cs.setString(1, user.getCf());
             cs.setString(2, user.getNome());
             cs.setString(3, user.getCognome());
@@ -37,11 +37,13 @@ public class UserRegistrationProcedureDAO implements GenericProcedureDAO<Boolean
             cs.setString(7, user.getCivico());
             cs.setString(8, user.getComune());
             cs.setString(9, user.getCap());
-            cs.setString(10, user.getCartaDiCredito());
-            cs.setString(11, creditCard.getNomeIntestatario());
-            cs.setString(12, creditCard.getCognomeIntestatario());
-            cs.setString(13, creditCard.getDataDiScadenza());
-            cs.setString(14, creditCard.getCvv());
+            cs.setString(10,user.getCartaDiCredito());
+            cs.setString(11,creditCard.getNomeIntestatario());
+            cs.setString(12,creditCard.getCognomeIntestatario());
+            cs.setString(13,creditCard.getDataDiScadenza());
+            cs.setString(14,creditCard.getCvv());
+            cs.setString(15,user.getUsername());
+            cs.setString(16,user.getPassword());
             cs.executeQuery();
         } catch (SQLException e) {
             throw new DAOException("User registration error: " + e.getMessage());
