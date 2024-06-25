@@ -31,7 +31,7 @@ public class AdminRegistrationController {
         }
 
         if(bool){
-            System.out.println("Admin Registration successful!");
+            System.out.println("\u001B[32m"+"Admin Registration successful!"+"\u001B[0m");
         }
 
     }

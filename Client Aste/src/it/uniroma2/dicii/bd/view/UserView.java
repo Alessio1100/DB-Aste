@@ -15,9 +15,9 @@ public class UserView {
 
     public static int showMenu() throws IOException {
         System.out.println(" ");
-        System.out.println("**********************************");
-        System.out.println("*****     USER DASHBOARD     *****");
-        System.out.println("**********************************\n");
+        System.out.println("\u001B[34m"+"**********************************"+"\u001B[0m");
+        System.out.println("\u001B[34m"+"*****     USER DASHBOARD     *****"+"\u001B[0m");
+        System.out.println("\u001B[34m"+"**********************************\n"+"\u001B[0m");
         System.out.println("***  What should I do for you? ***\n");
         System.out.println("1) Make a bid for an item");
         System.out.println("2) View the unfinished auctions you bid on");

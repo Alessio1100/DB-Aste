@@ -9,9 +9,9 @@ import java.util.Scanner;
 
 public class ApplicationView {
     public static int showMenu(){
-        System.out.println("**********************************");
-        System.out.println("***  AUCTION SYSTEM DASHBOARD  ***");
-        System.out.println("**********************************\n");
+        System.out.println("\u001B[34m"+"**********************************"+"\u001B[0m");
+        System.out.println("\u001B[34m"+"***  AUCTION SYSTEM DASHBOARD  ***"+"\u001B[0m");
+        System.out.println("\u001B[34m"+"**********************************\n"+"\u001B[0m");
         System.out.println("****  What do you want to do? ****\n");
         System.out.println("1) Register");
         System.out.println("2) Login");

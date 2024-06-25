@@ -14,7 +14,7 @@ public class AdminRegistrationView {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println(" ");
-        System.out.println("****   ADMIN REGISTRATION    ****");
+        System.out.println("\u001B[34m"+"****   ADMIN REGISTRATION    ****"+"\u001B[0m");
         System.out.println(" ");
         System.out.print("username: ");
         String username = reader.readLine();

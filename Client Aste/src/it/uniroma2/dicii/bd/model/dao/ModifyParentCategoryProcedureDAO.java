@@ -26,7 +26,7 @@ public class ModifyParentCategoryProcedureDAO implements GenericProcedureDAO<Boo
         try{
 
             Connection conn = ConnectionFactory.getConnection();
-            CallableStatement cs = conn.prepareCall("{call modify_parent_category(?,?)}");
+            CallableStatement cs = conn.prepareCall("{call modify_parent_category_procedure(?,?)}");
             cs.setString(1, category.getNome());
             cs.setString(2, category.getCategoriaGenitore());
             cs.execute();

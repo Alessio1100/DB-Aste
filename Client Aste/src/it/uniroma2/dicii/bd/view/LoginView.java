@@ -10,7 +10,7 @@ public class LoginView {
     public static Credentials authenticate() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println(" ");
-        System.out.println("*********      LOGIN     *********");
+        System.out.println("\u001B[34m"+"*********      LOGIN     *********"+"\u001B[0m");
         System.out.println(" ");
         System.out.print("username: ");
         String username = reader.readLine();

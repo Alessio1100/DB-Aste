@@ -14,16 +14,16 @@ import java.util.Scanner;
 public class AdminView {
     public static int showMenu() throws IOException {
         System.out.println(" ");
-        System.out.println("*********************************");
-        System.out.println("****     ADMIN DASHBOARD     ****");
-        System.out.println("*********************************\n");
+        System.out.println("\u001B[34m"+"*********************************"+"\u001B[0m");
+        System.out.println("\u001B[34m"+"****     ADMIN DASHBOARD     ****"+"\u001B[0m");
+        System.out.println("\u001B[34m"+"*********************************\n"+"\u001B[0m");
         System.out.println("*** What should I do for you? ***\n");
         System.out.println("1) Insert a new item in auction");
         System.out.println("2) Insert a new Category");
         System.out.println("3) Modify a Category ");
         System.out.println("4) Delete a Category");
-        System.out.println("5) Modify a parent Category ");
-        System.out.println("6) Delete a parent Category");
+        System.out.println("5) Modify a Parent Category ");
+        System.out.println("6) Delete a Parent Category");
         System.out.println("7) Display all auctions");
         System.out.println("8) Display all Categories");
         System.out.println("9) Quit");
@@ -126,7 +126,7 @@ public class AdminView {
         boolean flag = false;
         int choice;
 
-        System.out.println("Please enter the name of the category to change the parent category: ");
+        System.out.println("Please enter the name of the category to insert: ");
         category.setNome(reader.readLine());
         System.out.println("The category has a Parent Category?");
         System.out.println("1) Yes");

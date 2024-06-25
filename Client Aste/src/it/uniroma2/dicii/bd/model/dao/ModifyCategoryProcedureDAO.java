@@ -6,6 +6,7 @@ import it.uniroma2.dicii.bd.model.domain.Category;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 public class ModifyCategoryProcedureDAO implements GenericProcedureDAO<Boolean>{
 
@@ -21,14 +22,16 @@ public class ModifyCategoryProcedureDAO implements GenericProcedureDAO<Boolean>{
     }
 
     public Boolean execute(Object... params) throws DAOException {
-        Category category = (Category) params[0];
+        List<Object> modifyList = (List<Object>) params[0];
+        Category category = (Category) modifyList.get(0);
+        String newName = (String) modifyList.get(1);
 
         try{
 
             Connection conn = ConnectionFactory.getConnection();
-            CallableStatement cs = conn.prepareCall("{call modify_category(?,?)}");
+            CallableStatement cs = conn.prepareCall("{call modify_category_procedure(?,?)}");
             cs.setString(1, category.getNome());
-            cs.setString(2, category.getCategoriaGenitore());
+            cs.setString(2, newName);
             cs.execute();
 
         } catch (SQLException e) {

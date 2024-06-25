@@ -7,9 +7,9 @@ public class RegistrationView {
 
     public static int ChooseRegistrationType() {
         System.out.println(" ");
-        System.out.println("*********************************");
-        System.out.println("*    REGISTRATION DASHBOARD    *");
-        System.out.println("*********************************\n");
+        System.out.println("\u001B[34m"+"*********************************"+"\u001B[0m");
+        System.out.println("\u001B[34m"+"*    REGISTRATION DASHBOARD    *"+"\u001B[0m");
+        System.out.println("\u001B[34m"+"*********************************\n"+"\u001B[0m");
         System.out.println("*** Choose how to register ***\n");
         System.out.println("1) Admin");
         System.out.println("2) User");

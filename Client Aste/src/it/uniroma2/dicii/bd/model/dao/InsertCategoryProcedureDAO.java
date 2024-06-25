@@ -25,19 +25,19 @@ public class InsertCategoryProcedureDAO implements GenericProcedureDAO<Boolean>{
         Category category = (Category) params[0];
 
         if(category.getCategoriaGenitore() == null){
-            bool = insertCategory(category);
+            bool = insertParentCategory(category);    // insert a category without parent (is a parent category)
         }
         else{
-            bool = insertParentCategory(category);
+            bool = insertSubCategory(category); // insert a category with parent (is a  sub category )
         }
         return bool;
     }
 
-    private Boolean insertParentCategory(Category category) throws DAOException {
+    private Boolean insertSubCategory(Category category) throws DAOException {
         try{
 
             Connection connection = ConnectionFactory.getConnection();
-            CallableStatement callableStatement = connection.prepareCall("{call insert_parent_category(?,?)}");
+            CallableStatement callableStatement = connection.prepareCall("{call insert_sub_category(?,?)}");
             callableStatement.setString(1, category.getNome());
             callableStatement.setString(2, category.getCategoriaGenitore());
             callableStatement.execute();
@@ -50,11 +50,11 @@ public class InsertCategoryProcedureDAO implements GenericProcedureDAO<Boolean>{
 
     }
 
-    private Boolean insertCategory(Category category) throws DAOException {
+    private Boolean insertParentCategory(Category category) throws DAOException {
         try{
 
             Connection connection = ConnectionFactory.getConnection();
-            CallableStatement callableStatement = connection.prepareCall("{call insert_category(?)}");
+            CallableStatement callableStatement = connection.prepareCall("{call insert_parent_category(?)}");
             callableStatement.setString(1, category.getNome());
             callableStatement.execute();
 

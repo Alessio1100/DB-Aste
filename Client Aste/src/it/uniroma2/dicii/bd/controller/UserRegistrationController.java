@@ -32,7 +32,7 @@ public class UserRegistrationController {
         }
 
         if(bool){
-            System.out.println("Registration successful!");
+            System.out.println("\u001B[32m"+"Registration successful!"+"\u001B[0m");
         }
 
     }

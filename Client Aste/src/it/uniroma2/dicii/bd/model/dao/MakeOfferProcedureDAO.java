@@ -42,6 +42,7 @@ public class MakeOfferProcedureDAO implements GenericProcedureDAO<Boolean>{
             cs.setFloat(2,offer.getImporto());
             cs.setString(3,offer.getOggetto());
             cs.setFloat(4,offer.getValoreMassimoAutomatico());
+            cs.execute();
         }
         catch (SQLException e){
             throw new DAOException("Offer automatic insertion error: "+e.getMessage());
@@ -50,13 +51,14 @@ public class MakeOfferProcedureDAO implements GenericProcedureDAO<Boolean>{
     }
 
     private Boolean makeOffer(Offer offer) throws DAOException {
-
+  
         try {
             Connection connection = ConnectionFactory.getConnection();
             CallableStatement cs = connection.prepareCall("{call make_offer(?,?,?)}");
             cs.setString(1,offer.getUtente());
             cs.setFloat(2,offer.getImporto());
             cs.setString(3,offer.getOggetto());
+            cs.execute();
         }
         catch (SQLException e) {
             throw new DAOException("Offer insertion error: "+e.getMessage());

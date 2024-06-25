@@ -28,7 +28,7 @@ public class CategoryListDAO implements GenericProcedureDAO<CategoryList>{
 
         try {
             Connection connection = ConnectionFactory.getConnection();
-            CallableStatement callableStatement = connection.prepareCall("{call mostra_categorie()}");
+            CallableStatement callableStatement = connection.prepareCall("{call show_categories()}");
             boolean flag = callableStatement.execute();
 
             if (flag){

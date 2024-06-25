@@ -93,7 +93,7 @@ public class AdminController implements Controller {
         }
 
         if(bool){
-            System.out.println("Parent Category successfully deleted!");
+            System.out.println("\u001B[32m"+"Parent Category successfully deleted!"+"\u001B[0m");
         }
     }
     private void deleteCategory() {
@@ -117,7 +117,7 @@ public class AdminController implements Controller {
         }
 
         if(bool){
-            System.out.println("Category successfully deleted!");
+            System.out.println("\u001B[32m"+"Category successfully deleted!"+"\u001B[0m");
         }
     }
     private void modifyParentCategory() {
@@ -140,7 +140,7 @@ public class AdminController implements Controller {
         }
 
         if(flag){
-            System.out.println("Parent Category successfully modified!");
+            System.out.println("\u001B[32m"+"Parent Category successfully modified!"+"\u001B[0m");
         }
     }
     private void modifyCategory() {
@@ -163,7 +163,7 @@ public class AdminController implements Controller {
         }
 
         if(flag){
-            System.out.println("Category successfully modified!");
+            System.out.println("\u001B[32m"+"Category successfully modified!"+"\u001B[0m");
         }
     }
     private void insertCategory() {
@@ -188,7 +188,7 @@ public class AdminController implements Controller {
         }
 
         if(bool){
-            System.out.println("Category successfully entered!");
+            System.out.println("\u001B[32m"+"Category successfully entered!"+"\u001B[0m");
         }
 
 
@@ -211,7 +211,7 @@ public class AdminController implements Controller {
             System.out.println(e.getMessage());
         }
         if (bool){
-            System.out.println("Item entered successfully");
+            System.out.println("\u001B[32m"+"Item entered successfully"+"\u001B[0m");
         }
 
     }

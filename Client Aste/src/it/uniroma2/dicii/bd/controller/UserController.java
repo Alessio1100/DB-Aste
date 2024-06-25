@@ -41,7 +41,7 @@ public class UserController implements ControllerLogged {
                 case 3 -> showPurchasedItems();            // U4
                 case 4 -> showItemsCurrentlyInAuction();   // U5
                 case 5 -> System.exit(0);            // exit choice
-                default -> throw new RuntimeException("Invalid choice");
+                default -> throw new RuntimeException("\u001B[31m"+"Invalid choice"+"\u001B[0m");
             }
         }
     }
@@ -108,7 +108,7 @@ public class UserController implements ControllerLogged {
        }
 
        if (bool){
-           System.out.println(" The offer was successfully added! ");
+           System.out.println("\u001B[32m"+" The offer was successfully added! "+"\u001B[0m");
        }
     }
 }

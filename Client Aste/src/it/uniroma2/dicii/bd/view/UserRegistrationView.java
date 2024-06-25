@@ -18,7 +18,7 @@ public class UserRegistrationView {
     public static Credentials showUserMenu() throws IOException{
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println(" ");
-        System.out.println("****    USER REGISTRATION    ****");
+        System.out.println("\u001B[34m"+"****    USER REGISTRATION    ****"+"\u001B[0m");
         System.out.println(" ");
         System.out.print("username: ");
         String username = reader.readLine();
