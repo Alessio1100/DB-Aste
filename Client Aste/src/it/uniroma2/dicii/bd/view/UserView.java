@@ -103,7 +103,6 @@ public class UserView {
         // set amount of the offer
         System.out.println("Enter the amount of the Offer: ");
         offer.setImporto(Float.parseFloat(id.readLine()));
-        System.out.println(offer.getImporto());
 
         boolean check;
         // choose for automatic counter-offer

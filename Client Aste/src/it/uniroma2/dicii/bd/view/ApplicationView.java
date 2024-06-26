@@ -39,7 +39,7 @@ public class ApplicationView {
         PrintWriter out = new PrintWriter(output);
 
         if (list.isEmpty()) {
-            out.println(ifempty);
+            out.println("\u001B[35m"+ifempty+"\u001B[30m");
             out.flush();
             return;
         }

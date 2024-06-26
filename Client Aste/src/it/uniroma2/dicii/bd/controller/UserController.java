@@ -108,7 +108,7 @@ public class UserController implements ControllerLogged {
        }
 
        if (bool){
-           System.out.println("\u001B[32m"+" The offer was successfully added! "+"\u001B[0m");
+           System.out.println("\u001B[32m"+"The offer was successfully added! "+"\u001B[0m");
        }
     }
 }
