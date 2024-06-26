@@ -30,7 +30,7 @@ public class AdminRegistrationProcedureDAO implements GenericProcedureDAO<Boolea
             cs.executeQuery();
         }
         catch (SQLException e){
-            throw new DAOException("Admin registration error ");
+            throw new DAOException("Admin registration error: "+ e.getMessage());
         }
 
         return true;

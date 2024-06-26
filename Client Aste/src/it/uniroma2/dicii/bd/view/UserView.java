@@ -57,7 +57,7 @@ public class UserView {
         fieldsToPrint.add("valoreMaxOfferta");
         fieldsToPrint.add("categoria");
 
-        ApplicationView.printObjectTable(itemList.getList(), System.out, fieldsToPrint);
+        ApplicationView.printObjectTable(itemList.getList(), System.out, fieldsToPrint,"No items in auction found");
 
     }
 
@@ -69,7 +69,7 @@ public class UserView {
         fieldsToPrint.add("categoria");
         fieldsToPrint.add("prezzoDiVendita");
 
-        ApplicationView.printObjectTable(itemList.getList(), System.out, fieldsToPrint);
+        ApplicationView.printObjectTable(itemList.getList(), System.out, fieldsToPrint,"No won auction found, win an auction to find items here ");
     }
 
     public static void showOfferedItemsView(ItemList itemList) {
@@ -84,7 +84,7 @@ public class UserView {
         fieldsToPrint.add("termineAsta");
         fieldsToPrint.add("valoreMaxOfferta");
 
-        ApplicationView.printObjectTable(itemList.getList(), System.out, fieldsToPrint);
+        ApplicationView.printObjectTable(itemList.getList(), System.out, fieldsToPrint,"No items found, make an offer to find items here ");
 
     }
 
@@ -102,7 +102,9 @@ public class UserView {
         offer.setOggetto(id.readLine());
         // set amount of the offer
         System.out.println("Enter the amount of the Offer: ");
-        offer.setImporto(bid.nextFloat());
+        offer.setImporto(Float.parseFloat(id.readLine()));
+        System.out.println(offer.getImporto());
+
         boolean check;
         // choose for automatic counter-offer
         do{

@@ -59,7 +59,7 @@ public class AdminView {
         fieldsToPrint.add("valoreMaxOfferta");
         fieldsToPrint.add("categoria");
 
-        ApplicationView.printObjectTable(itemList.getList(), System.out, fieldsToPrint);
+        ApplicationView.printObjectTable(itemList.getList(), System.out, fieldsToPrint,"no items in auction found, insert new items to find them here");
     }
 
     public static void showCategoriesView(CategoryList categoryList) {
@@ -68,7 +68,7 @@ public class AdminView {
         fieldsToPrint.add("nome");
         fieldsToPrint.add(" categoriaGenitore");
 
-        ApplicationView.printObjectTable(categoryList.getList(), System.out, fieldsToPrint);
+        ApplicationView.printObjectTable(categoryList.getList(), System.out, fieldsToPrint,"no categories found, insert new categories to find them here ");
     }
 
     public static Category deleteParentCategoryView() throws IOException {

@@ -34,12 +34,12 @@ public class ApplicationView {
         return choice;
     }
 
-    public static <T> void printObjectTable(List<T> list, OutputStream output, List<String> fieldsToPrint) {
+    public static <T> void printObjectTable(List<T> list, OutputStream output, List<String> fieldsToPrint,String ifempty) {
 
         PrintWriter out = new PrintWriter(output);
 
         if (list.isEmpty()) {
-            out.println("La lista è vuota.");
+            out.println(ifempty);
             out.flush();
             return;
         }
