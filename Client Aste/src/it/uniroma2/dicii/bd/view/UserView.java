@@ -63,11 +63,13 @@ public class UserView {
 
     public static void showPurchasedItemsView(ItemList itemList) {
         List<String> fieldsToPrint = new ArrayList<>();
+        fieldsToPrint.add("id");
         fieldsToPrint.add("descrizione");
         fieldsToPrint.add("stato");
         fieldsToPrint.add("dimensioni");
-        fieldsToPrint.add("categoria");
+        fieldsToPrint.add("termineAsta");
         fieldsToPrint.add("prezzoDiVendita");
+        fieldsToPrint.add("categoria");
 
         ApplicationView.printObjectTable(itemList.getList(), System.out, fieldsToPrint,"No won auction found, win an auction to find items here ");
     }

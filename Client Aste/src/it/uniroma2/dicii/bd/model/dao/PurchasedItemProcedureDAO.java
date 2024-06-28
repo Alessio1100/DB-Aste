@@ -40,12 +40,13 @@ public class PurchasedItemProcedureDAO implements GenericProcedureDAO<ItemList> 
                 while (rs.next()){
 
                     Item item = new Item();
-                    item.setDescrizione(rs.getString(1));
-                    item.setStato(rs.getString(2));
-                    item.setDimensioni(rs.getString(3));
-                    item.setTermineAsta(rs.getDate(4));
-                    item.setPrezzoDiVendita(rs.getFloat(5));
-                    item.setCategoria(rs.getString(6));
+                    item.setId(rs.getString(1));
+                    item.setDescrizione(rs.getString(2));
+                    item.setStato(rs.getString(3));
+                    item.setDimensioni(rs.getString(4));
+                    item.setTermineAsta(rs.getDate(5));
+                    item.setPrezzoDiVendita(rs.getFloat(6));
+                    item.setCategoria(rs.getString(7));
 
 
                     itemList.addItem(item);

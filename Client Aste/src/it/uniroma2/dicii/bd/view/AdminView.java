@@ -66,7 +66,7 @@ public class AdminView {
 
         List<String> fieldsToPrint = new ArrayList<>();
         fieldsToPrint.add("nome");
-        fieldsToPrint.add(" categoriaGenitore");
+        fieldsToPrint.add("categoriaGenitore");
 
         ApplicationView.printObjectTable(categoryList.getList(), System.out, fieldsToPrint,"no categories found, insert new categories to find them here ");
     }

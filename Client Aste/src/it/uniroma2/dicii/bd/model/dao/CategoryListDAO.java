@@ -39,7 +39,7 @@ public class CategoryListDAO implements GenericProcedureDAO<CategoryList>{
                     category.setNome(rs.getString(1));
                     category.setCategoriaGenitore(rs.getString(2));
                     if (category.getCategoriaGenitore()==null){
-                        category.setCategoriaGenitore("No parent Category avaliable");
+                        category.setCategoriaGenitore("No parent Category available");
                     }
                     categoryList.addCategory(category);
                 }

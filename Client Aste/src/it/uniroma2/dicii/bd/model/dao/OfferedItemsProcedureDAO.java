@@ -47,7 +47,9 @@ public class OfferedItemsProcedureDAO implements GenericProcedureDAO<ItemList>{
                     item.setDimensioni(rs.getString(5));
                     item.setInizioAsta(rs.getTimestamp(6).toLocalDateTime());
                     item.setTermineAsta(rs.getDate(7));
-                    item.setValoreMaxOfferta(rs.getFloat(8));
+                    item.setNumeroOfferte(rs.getInt(8));
+                    item.setValoreMaxOfferta(rs.getFloat(9));
+                    item.setCategoria(rs.getString(10));
 
                     itemList.addItem(item);
                 }
