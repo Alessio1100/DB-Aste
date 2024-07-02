@@ -39,7 +39,6 @@ public class ApplicationController implements Controller {
         switch (choice) {
 
             case 1 -> {
-                System.out.println("chosen 1");
                 AdminRegistrationController adminRegistrationController = new AdminRegistrationController();
                 adminRegistrationController.start();
                 admin = adminRegistrationController.getUser();
@@ -49,7 +48,6 @@ public class ApplicationController implements Controller {
 
             }
             case 2 -> {
-                System.out.println("chosen 2");
                 UserRegistrationController userRegistrationController = new UserRegistrationController();
                 userRegistrationController.start();
                 user = userRegistrationController.getUser();
