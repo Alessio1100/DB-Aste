@@ -163,7 +163,7 @@ BEGIN
     START TRANSACTION;
     
  -- Controllo se il username esiste già nella tabella utente
-	IF (SELECT COUNT(*) FROM utente WHERE username = var_username) > 0 THEN
+	IF (SELECT COUNT(*) FROM utente WHERE username = var_username) > 0 OR (SELECT COUNT(*) FROM amministratore WHERE username = var_username) > 0 THEN
 	   SIGNAL SQLSTATE '45040' SET MESSAGE_TEXT = "Username already exists ";
 	END IF;
 	INSERT INTO amministratore(username, `password`) VALUES (var_username, md5(var_password));
@@ -328,7 +328,12 @@ BEGIN
         
         DELETE FROM categoria WHERE nome = var_name;
         
-        COMMIT;
+        IF ROW_COUNT() = 0 THEN
+			ROLLBACK;
+			SIGNAL SQLSTATE '45070' SET MESSAGE_TEXT = 'Category does not exist';
+		ELSE
+			COMMIT;
+		END IF;
 END$$
 
 DELIMITER ;
@@ -354,7 +359,12 @@ BEGIN
         SET categoriaGenitore = null
         WHERE nome = var_name; 
         
-        COMMIT;
+        IF ROW_COUNT() = 0 THEN
+			ROLLBACK;
+			SIGNAL SQLSTATE '45070' SET MESSAGE_TEXT = 'Category does not exist';
+		ELSE
+			COMMIT;
+		END IF;
 END$$
 
 DELIMITER ;
@@ -810,8 +820,13 @@ BEGIN
 			UPDATE categoria 
             SET nome = var_new_name
             WHERE nome = var_old_name;
-		
-        COMMIT;
+		 
+            IF ROW_COUNT() = 0 THEN
+				ROLLBACK;
+				SIGNAL SQLSTATE '45070' SET MESSAGE_TEXT = 'Category does not exist';
+			ELSE
+				COMMIT;
+			END IF;
 END$$
 
 DELIMITER ;
@@ -836,8 +851,13 @@ BEGIN
 			UPDATE categoria 
             SET categoriaGenitore = var_parent
             WHERE nome = var_name;
-		
-        COMMIT;
+			
+			IF ROW_COUNT() = 0 THEN
+				ROLLBACK;
+				SIGNAL SQLSTATE '45070' SET MESSAGE_TEXT = 'Category does not exist';
+			ELSE
+				COMMIT;
+			END IF;
 END$$
 
 DELIMITER ;
@@ -935,7 +955,7 @@ BEGIN
         START TRANSACTION;
         
          -- Controllo se il username esiste già nella tabella amministratore
-		IF (SELECT COUNT(*) FROM amministratore WHERE username = var_username) > 0 THEN
+		IF (SELECT COUNT(*) FROM amministratore WHERE username = var_username) > 0 OR (SELECT COUNT(*) FROM utente WHERE username = var_username) > 0 > 0 THEN
 			SIGNAL SQLSTATE '45040' SET MESSAGE_TEXT = "Username already exists";
 		END IF;
         
